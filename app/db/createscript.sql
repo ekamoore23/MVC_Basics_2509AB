@@ -13,7 +13,7 @@ USE `MVC_Basics_2509AB`;
 
 CREATE TABLE Smartphones
 (
-     Id                   SMALLINT        UNSIGNED    NOT NULL    AUTO_INCREMENT,
+     Id                   SMALLINT        UNSIGNED    NOT NULL    AUTO_INCREMENT
     ,Merk                VARCHAR(50)                 NOT NULL
     ,Model               VARCHAR(50)                 NOT NULL
     ,Prijs               DECIMAL(6,2)                NOT NULL
@@ -51,7 +51,7 @@ VALUES
 
 CREATE TABLE Sneakers
 (
-     Id                  SMALLINT        UNSIGNED    NOT NULL    AUTO_INCREMENT,
+     Id                  SMALLINT        UNSIGNED    NOT NULL    AUTO_INCREMENT
     ,Merk                VARCHAR(50)                NOT NULL
     ,Model               VARCHAR(50)                NOT NULL
     ,Type                VARCHAR(25)                NOT NULL
@@ -90,7 +90,7 @@ VALUES
 
 CREATE TABLE Horloges
 (
-     Id                 SMALLINT        UNSIGNED    NOT NULL    AUTO_INCREMENT,
+     Id                 SMALLINT        UNSIGNED    NOT NULL    AUTO_INCREMENT
     ,Merk               VARCHAR(50)                 NOT NULL
     ,Model              VARCHAR(50)                 NOT NULL
     ,Prijs              DECIMAL(6,0)                NOT NULL

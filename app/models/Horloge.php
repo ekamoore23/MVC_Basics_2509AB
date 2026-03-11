@@ -1,6 +1,6 @@
 <?php
 
-class Sneaker
+class Horloge
 {
     private $db;
 
@@ -9,32 +9,33 @@ class Sneaker
         $this->db = new Database();
     }
 
-    public function getAllSneakers()
+    public function getAllHorloges()
     {
         $sql = 'SELECT   SMPS.Id
                         ,SMPS.Merk
                         ,SMPS.Model
-                        ,SMPS.Type
                         ,SMPS.Prijs
                         ,SMPS.Materiaal
                         ,CONCAT(SMPS.Gewicht, " g") as Gewicht
                         ,DATE_FORMAT(SMPS.Releasedatum, "%d/%m/%Y") as Releasedatum
+                        ,SMPS.Waterdichtheid
+                        ,SMPS.Type
+                        ,SMPS.UniekKenmerk
                     
-                FROM Sneakers as SMPS
+                FROM Horloges as SMPS
 
-                ORDER BY SMPS.Prijs DESC
-                        ,SMPS.Gewicht DESC
-                        ,SMPS.Releasedatum DESC';
+                ORDER BY SMPS.Prijs DESC';
+
 
         $this->db->query($sql);
 
         return $this->db->resultset();
     }
 
-        public function delete($Id)
+    public function delete($Id)
     {
         $sql = "DELETE
-                FROM Sneakers
+                FROM Horloges
                 WHERE Id = :Id";
 
         $this->db->query($sql);

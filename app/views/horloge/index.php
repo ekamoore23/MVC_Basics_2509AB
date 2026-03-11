@@ -23,27 +23,31 @@
                     <tr>
                         <th>Merk</th>
                         <th>Model</th>
-                        <th>Type</th>
                         <th>Prijs</th>
                         <th>Materiaal</th>
                         <th>Gewicht</th>
                         <th>Releasedatum</th>
+                        <th>Waterdichtheid</th>
+                        <th>Type</th>
+                        <th>Uniek Kenmerk</th>
                         <th>Verwijder</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <?php foreach ($data['result'] as $sneaker) : ?>
+                    <?php foreach ($data['result'] as $horloge) : ?>
                         <tr>
-                            <td><?= $sneaker->Merk; ?></td>
-                            <td><?= $sneaker->Model; ?></td>
-                            <td><?= $sneaker->Type; ?></td>
-                            <td><?= $sneaker->Prijs; ?></td>
-                            <td><?= $sneaker->Materiaal; ?></td>
-                            <td><?= $sneaker->Gewicht; ?></td>
-                            <td><?= $sneaker->Releasedatum; ?></td>
+                            <td><?= $horloge->Merk; ?></td>
+                            <td><?= $horloge->Model; ?></td>
+                            <td><?= $horloge->Prijs; ?></td>
+                            <td><?= $horloge->Materiaal; ?></td>
+                            <td><?= $horloge->Gewicht; ?></td>
+                            <td><?= $horloge->Releasedatum; ?></td>
+                            <td><?= $horloge->Waterdichtheid; ?></td>
+                            <td><?= $horloge->Type; ?></td>
+                            <td><?= $horloge->UniekKenmerk; ?></td>
                             <td class="text-center">
-                                <a href="<?= URLROOT; ?>/SneakerController/delete/<?= $sneaker->Id; ?>"
+                                <a href="<?= URLROOT; ?>/HorlogeController/delete/<?= $horloge->Id; ?>"
                                     onclick="return confirm('Weet je zeker dat je dit record wilt verwijderen?');">
                                     <i class="bi bi-trash3-fill text-danger"></i>  
                                 </a>
