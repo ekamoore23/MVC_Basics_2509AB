@@ -16,6 +16,16 @@
         </div>
     </div>
     
+    <!-- Knop voor het maken van een nieuw sneaker record -->
+    <div class="row mt-3 d-flex justify-content-center">
+        <div class="col-10 text-begin text-danger">
+            <a href="<?= URLROOT; ?>/SneakerController/create"
+               class="btn btn-warning"
+               role="button">Nieuwe sneaker
+            </a> 
+        </div>
+    </div>    
+
     <div class="row mt-3 d-flex justify-content-center">
         <div class="col-10">
             <table class="table table-striped table-hover">
