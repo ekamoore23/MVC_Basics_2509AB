@@ -1,5 +1,7 @@
 <?php require_once APPROOT . '/views/includes/header.php'; ?>
 
+<?php // var_dump($_POST); ?>
+
 <!-- Voor het centreren van de container gebruiken we het bootstrap grid -->
 <div class="container">
     <div class="row mt-4 d-flex justify-content-center">
@@ -10,59 +12,60 @@
 
     <!-- Terugkoppeling naar de gebruiker -->
     <?php if (!empty($data['message'])): ?>
-    <div class="row mt-3 d-<?= $data['display']; ?> justify-content-center">
+    <div class="row mt-3 <?= $data['display']; ?> justify-content-center">
         <div class="col-6 text-begin text-primary">
             <div class="alert alert-<?= $data['color']; ?>" role="alert">
-                <?= $data['message'] ?>
+                <?= $data['message']; ?>
             </div>
         </div>
     </div>
     <?php endif; ?>
 
+    <!-- Update formulier -->
     <div class="row mt-3 d-flex justify-content-center">
         <div class="col-6">
-            <form action="<?= URLROOT; ?>/SmartphoneController/create" method="post">
+            <form action="<?= URLROOT; ?>/SmartphoneController/update" method="post">
 
                 <div class="mb-3">
                     <label for="merk" class="form-label">Merk</label>
-                    <input name="merk" type="text" class="form-control" id="merk" value="<?= $_POST['merk'] ?? ''; ?>">
+                    <input name="merk" type="text" class="form-control" id="merk" value="<?= $_POST['merk'] ?? $data['smartphone']->Merk; ?>">
                 </div>
 
                 <div class="mb-3">
                     <label for="model" class="form-label">Model</label>
-                    <input name="model" type="text" class="form-control" id="model" value="<?= $_POST['model'] ?? ''; ?>" required>
+                    <input name="model" type="text" class="form-control" id="model" value="<?= $_POST['model'] ?? $data['smartphone']->Model; ?>" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="prijs" class="form-label">Prijs</label>
-                    <input name="prijs" type="number" min="0" max="9999" step="0.01" class="form-control" id="prijs" value="<?= $_POST['prijs'] ?? ''; ?>" required>
+                    <input name="prijs" type="number" min="0" max="9999" step="0.01" class="form-control" id="prijs" value="<?= $_POST['prijs'] ?? $data['smartphone']->Prijs; ?>" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="geheugen" class="form-label">Geheugen (GB)</label>
-                    <input name="geheugen" type="number" min="0" max="4000" class="form-control" id="geheugen" value="<?= $_POST['geheugen'] ?? ''; ?>" required>
+                    <input name="geheugen" type="number" min="0" max="4000" class="form-control" id="geheugen" value="<?= $_POST['geheugen'] ?? $data['smartphone']->Geheugen; ?>" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="besturingssysteem" class="form-label">Besturingssysteem</label>
-                    <input name="besturingssysteem" type="text" class="form-control" id="besturingssysteem" value="<?= $_POST['besturingssysteem'] ?? ''; ?>" required>
+                    <input name="besturingssysteem" type="text" class="form-control" id="besturingssysteem" value="<?= $_POST['besturingssysteem'] ?? $data['smartphone']->Besturingssysteem; ?>" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="schermgrootte" class="form-label">Schermgrootte</label>
-                    <input name="schermgrootte" type="number" min="0" max="10" step="0.01" class="form-control" id="schermgrootte" value="<?= $_POST['schermgrootte'] ?? ''; ?>" required>
+                    <input name="schermgrootte" type="number" min="0" max="10" step="0.01" class="form-control" id="schermgrootte" value="<?= $_POST['schermgrootte'] ?? $data['smartphone']->Schermgrootte; ?>" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="releasedatum" class="form-label">Releasedatum</label>
-                    <input name="releasedatum" type="date" class="form-control" id="releasedatum" value="<?= $_POST['releasedatum'] ?? ''; ?>" required>
+                    <input name="releasedatum" type="date" class="form-control" id="releasedatum" value="<?= $_POST['releasedatum'] ?? $data['smartphone']->Releasedatum; ?>" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="megapixels" class="form-label">Megapixels</label>
-                    <input name="megapixels" type="number" min="0" max="10000" class="form-control" id="megapixels" value="<?= $_POST['megapixels'] ?? ''; ?>" required>
+                    <input name="megapixels" type="number" min="0" max="10000" class="form-control" id="megapixels" value="<?= $_POST['megapixels'] ?? $data['smartphone']->MegaPixels; ?>" required>
                 </div>
-
+                <input type="hidden" name="id" value="<?= $_POST['id'] ?? $data['smartphone']->Id; ?>">
                 <button type="submit" class="btn btn-primary">Verstuur</button>
             </form>
 

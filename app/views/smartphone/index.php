@@ -40,6 +40,7 @@
                         <th>Schermgrootte</th>
                         <th>Releasedatum</th>
                         <th>MegaPixels</th>
+                        <th>Wijzig</th>
                         <th>Verwijder</th>
                     </tr>
                 </thead>
@@ -54,6 +55,11 @@
                             <td><?= $smartphone->Schermgrootte; ?></td>
                             <td><?= $smartphone->Releasedatum; ?></td>
                             <td><?= $smartphone->MegaPixels; ?></td>
+                            <td class="text-center">
+                                <a href="<?=  URLROOT; ?>/SmartphoneController/update/<?=  $smartphone->Id; ?>">
+                                    <i class="bi bi-pencil-fill text-success"></i>
+                                </a>
+                            </td>
                             <td class="text-center">
                                 <a href="<?= URLROOT; ?>/SmartphoneController/delete/<?= $smartphone->Id; ?>"
                                     onclick="return confirm('Weet je zeker dat je dit record wilt verwijderen?');">
