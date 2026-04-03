@@ -16,7 +16,7 @@ class SmartphoneController extends BaseController
         // var_dump($result);
 
         $data = [
-            'title' => 'Overzicht smartphones',
+            'title' => 'Overzicht Smartphones',
             'display' => $display,
             'message' => $message,
             'result' => $result
