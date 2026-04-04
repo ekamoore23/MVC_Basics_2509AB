@@ -70,7 +70,9 @@
                 </tbody>
             </table>
 
-            <a href="<?php echo URLROOT; ?>/homepages/index"><i class="bi bi-arrow-left"></i></a>
+            <a href="<?= URLROOT; ?>/homepages/index" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> Terug naar homepage
+            </a>
         </div>
     </div>
 </div>
